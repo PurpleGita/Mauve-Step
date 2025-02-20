@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 4.14
   threshold:
     overrideState: 1
-    value: 0.5
+    value: 2
   softKnee:
     overrideState: 1
     value: 0.711
@@ -1437,7 +1437,7 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 41.155994, y: 86.156006}
+    value: {x: 40.96136, y: 85.961365}
   minLuminance:
     overrideState: 0
     value: 0

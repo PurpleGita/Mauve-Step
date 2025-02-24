@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f80df9d30b3dc4591c171e4c2ed771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!65 &515975219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -326,7 +327,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.43, y: 0.43, z: 2}
@@ -340,8 +341,8 @@ Rigidbody:
   m_GameObject: {fileID: 515975212}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 9
+  m_Drag: 10
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -356,7 +357,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &529877057
 GameObject:
@@ -1327,8 +1328,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1633409688}
   - {fileID: 875000877}
-  - {fileID: 515975215}
   - {fileID: 1840914862}
+  - {fileID: 515975215}
   - {fileID: 1371540884}
   - {fileID: 532440362}
   - {fileID: 2033610054}

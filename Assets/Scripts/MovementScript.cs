@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
+
+    public Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("Hello World!");
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,8 @@ public class MovementScript : MonoBehaviour
 
 
         //actual movement
-        transform.Translate(Xmovement * Time.deltaTime);
+        rb.linearVelocity = new Vector3(Xmovement.x, 0, 0);
+
 
     }
 
@@ -52,6 +55,8 @@ public class MovementScript : MonoBehaviour
 
 
         //actual movement
+        rb.angularVelocity = new Vector3(0, 0, Zmovement.z);
+
         transform.Translate(Zmovement * Time.deltaTime);
     }
 

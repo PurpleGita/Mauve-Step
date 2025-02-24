@@ -32,6 +32,9 @@ public class MovementScript : MonoBehaviour
 
         //do the run animation or walk animation based on speed (talk to animation handler)
 
+
+
+
         //actual movement
         transform.Translate(Xmovement * Time.deltaTime);
 
@@ -44,6 +47,9 @@ public class MovementScript : MonoBehaviour
         //check for collision
 
         //do the run animation or walk animation based on speed (talk to animation handler)
+
+
+
 
         //actual movement
         transform.Translate(Zmovement * Time.deltaTime);

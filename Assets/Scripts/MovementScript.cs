@@ -25,7 +25,7 @@ public class MovementScript : MonoBehaviour
         }
 
         // Convert 2D input om til bev�gelse.
-        movementVector = new Vector3(direction.x/100, 0f, direction.y/100) * speed;
+        movementVector = new Vector3(direction.x/80, 0f, direction.y/80) * speed;
 
         // Flip sprite til at se bedre ud.
         if (direction.x < 0)
@@ -44,6 +44,7 @@ public class MovementScript : MonoBehaviour
         rb.linearVelocity = movementVector;
 
     }
+
 
 
 

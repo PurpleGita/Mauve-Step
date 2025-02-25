@@ -1,76 +1,57 @@
-using System;
 using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-
     public Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float speed = 1f;
+    private Vector3 movementVector = Vector3.zero;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Physics.gravity = new Vector3(0, -65.0F, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Bliver kaldt fra touchPadScript n�r der er input
+    public void ReciveInput(Vector2 direction)
     {
- 
-    }
+        //checkker om spilleren g�r ud af sk�rmen
+        if(transform.position.z < 11) 
+        { 
+            if (direction.y < 0) 
+            { 
+                direction.y = 0;
+            }
+        }
 
-    void MovementXAxis(Vector2 Xmovement)
-    {
+        // Convert 2D input om til bev�gelse.
+        movementVector = new Vector3(direction.x/100, 0f, direction.y/100) * speed;
 
-        //flip sprite to face the direction of movement
-        if (Xmovement.x < 0)
+        // Flip sprite til at se bedre ud.
+        if (direction.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if (Xmovement.x > 0)
+        else if (direction.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
+    }
 
-        //check for collision
-
-        //do the run animation or walk animation based on speed (talk to animation handler)
-
-
-
-
-        //actual movement
-        rb.linearVelocity = new Vector3(Xmovement.x, 0, 0);
-
+    void FixedUpdate()
+    {
+        //Bevæger spilleren
+        rb.linearVelocity = movementVector;
 
     }
 
-    void MovementZAxis(Vector3 Zmovement)
+
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Zmovement: " + Zmovement);
-
-        //check for collision
-
-        //do the run animation or walk animation based on speed (talk to animation handler)
-
-
-
-
-        //actual movement
-        rb.angularVelocity = new Vector3(0, 0, Zmovement.z);
-
-        transform.Translate(Zmovement * Time.deltaTime);
-    }
-
-    public void ReciveInput(Vector2 direction)
-    {
-        //send the direction y to the method that moves the player on the z axis
-        Vector3 directionz = new Vector3(0, 0, (direction.y/10));
-        MovementZAxis(directionz);
-
-
-        //send the direction x to the method that moves the player on the x axis
-        Vector2 directionx = new Vector2((direction.x/10), 0);
-        MovementXAxis(directionx);
-
-       
+        // Lav movement om til 0 hvis der er kollision
+        movementVector = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
     }
 }

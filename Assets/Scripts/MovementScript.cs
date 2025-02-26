@@ -46,9 +46,6 @@ public class MovementScript : MonoBehaviour
     }
 
 
-
-
-
     private void OnCollisionEnter(Collision collision)
     {
         // Lav movement om til 0 hvis der er kollision

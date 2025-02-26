@@ -17,6 +17,11 @@ public class Unlockable : MonoBehaviour
         
     }
 
+    void MoveDownSlowly(float speed)
+    {
+        transform.position += Vector3.down * speed * Time.deltaTime;
+    }
+
     public void Unlock(int id) 
     { 
         if (id == unlockableID) 
@@ -31,7 +36,7 @@ public class Unlockable : MonoBehaviour
 
             case 1:
                 Debug.Log("Sliding Down");
-                transform.Translate(0, -5, 0);
+                MoveDownSlowly(9f);
                 break;
 
             default:

@@ -29,37 +29,17 @@ public class interactable : MonoBehaviour
         }
     }
 
+
     public void Interact()
     {
-        Debug.Log("Interacting with object");
-        switch (interactActionID)
-        {
-            case 1:
+         GameObject[] gos;
+         gos = GameObject.FindGameObjectsWithTag("Unlockable");
 
-                GameObject[] gos;
-                gos = GameObject.FindGameObjectsWithTag("Unlockable");
+         foreach (GameObject go in gos)
+         {
+            go.GetComponent<Unlockable>().Unlock(1);
+         }
 
-                foreach (GameObject go in gos)
-                {
-                    go.GetComponent<Unlockable>().Unlock(1);
-                }
-                break;
-
-
-            case 2:
-                Debug.Log("Interact action 2");
-                break;
-
-
-            case 3:
-                Debug.Log("Interact action 3");
-                break;
-
-
-            default:
-                Debug.Log("Interact action not found");
-                break;
-        }
     }
 
 }

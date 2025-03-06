@@ -34,11 +34,13 @@ public class interactable : MonoBehaviour
     {
          GameObject[] gos;
          gos = GameObject.FindGameObjectsWithTag("Unlockable");
+            
 
          foreach (GameObject go in gos)
          {
             go.GetComponent<Unlockable>().Unlock(1);
-         }
+            go.GetComponent<Unlockable>().Unlock(2);
+        }
 
     }
 

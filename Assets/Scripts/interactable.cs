@@ -2,6 +2,8 @@ using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
 
+
+
 public class interactable : MonoBehaviour
 {
 
@@ -17,6 +19,7 @@ public class interactable : MonoBehaviour
             player.GetComponent<PlayerInteract>().EnableInteractButton();
             player.GetComponent<PlayerInteract>().LastInteractableSeen = gameObject;
         }
+
     }
 
 
@@ -39,7 +42,7 @@ public class interactable : MonoBehaviour
          foreach (GameObject go in gos)
          {
             go.GetComponent<Unlockable>().Unlock(1);
-            go.GetComponent<Unlockable>().Unlock(2);
+
         }
 
     }

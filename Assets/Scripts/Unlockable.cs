@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,28 +33,18 @@ public class Unlockable : MonoBehaviour
         }
     }
 
-    void ChangeScene(string sceneToLoad)
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
-
 
     void UnlockAction(int actionID) 
     {
         switch (actionID) {
 
             case 1:
-                Debug.Log("Sliding Down");
+       
                 MoveDownSlowly(9f);
                 break;
 
-            case 2:
-                Debug.Log("Change scene");
-                ChangeScene("Stage1");
-                break;
-
             default:
-                Debug.Log("Unlock action not found");
+              
                 break;
         }
     }

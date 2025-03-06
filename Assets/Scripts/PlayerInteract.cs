@@ -1,4 +1,7 @@
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -22,4 +25,5 @@ public class PlayerInteract : MonoBehaviour
         interactButton.SetActive(false);
         Debug.Log("Interact button disabled");
     }
+    
 }

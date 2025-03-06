@@ -26,7 +26,7 @@ public class Unlockable : MonoBehaviour
     { 
         if (id == unlockableID) 
         {
-            UnlockAction(unlockableActionID); 
+            UnlockAction(unlockableActionID);
         }
     }
 

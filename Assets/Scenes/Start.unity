@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 515975220}
   - component: {fileID: 515975221}
   - component: {fileID: 515975222}
+  - component: {fileID: 515975223}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -586,6 +587,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 1263397688}
   LastInteractableSeen: {fileID: 0}
+--- !u!114 &515975223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515975212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc81ef8f65976a4c9b56d6fa0cf44a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &529877057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +2797,7 @@ MonoBehaviour:
   player: {fileID: 515975215}
   deadZone: {x: 9, y: 9}
   _cameraOffset: {x: 0, y: 8.1, z: -0.37}
-  smoothTime: {x: 1, y: 1}
+  smoothTime: {x: 2, y: 1}
   _camPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1741090310
 GameObject:

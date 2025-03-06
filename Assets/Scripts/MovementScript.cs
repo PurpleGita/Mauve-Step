@@ -41,12 +41,11 @@ public class MovementScript : MonoBehaviour
     void FixedUpdate()
     {
         //ændre velocity til at være 0 hvis den er meget lille.
-        if(movementVector.x < 0.5) { movementVector.x = 0; }
-        if(movementVector.y < 0.5) { movementVector.y = 0; }
+        if(movementVector.x < 0.5 && movementVector.x > -0.5) { movementVector.x = 0; }
+        if(movementVector.z < 0.5 && movementVector.z > -0.5) { movementVector.z = 0; }
 
         //Bevæger spilleren
         rb.linearVelocity = movementVector;
-
     }
 
 

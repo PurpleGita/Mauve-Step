@@ -11,7 +11,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("ChanceScene triggered");
+            Debug.Log("ChangeScene triggered");
             SceneManager.LoadScene(sceneToLoad);
         }
 

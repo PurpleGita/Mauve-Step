@@ -1,16 +1,22 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEncounter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static int fightId;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    private void OnCollisionEnter(Collision collision) 
+    { 
+        if(collision.gameObject.tag == "Enemy") 
+        {
+            //check fight id of the enemy and set fight room to the id
+            fightId = collision.gameObject.GetComponent<ExplorationEnemy>().FightID;
+
+            //go to scene
+            SceneManager.LoadScene(1);
+         
+        }
     }
 }
